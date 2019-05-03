@@ -160,6 +160,8 @@ console.dir(res,true);
 //
 
 ```
+---
+
 #### Fixed values
 This is your typical jira map.
 ```js
@@ -202,3 +204,50 @@ result ={
 }
 
 ```
+
+---
+
+#### More examples
+
+```js
+const map = {"foo.bar":"field1"} 
+/*Will translate into 
+ foo:{
+     bar:"field1
+ }*/
+ const map = {value:"object1.property"} //Will also work.
+ ```
+
+ ---
+
+ #### Mapping with functions
+ Sometimes you can not simply map one value to another, so the object mapper allows you to use define functions
+
+ ```js
+var themap = {
+        "value1": "value1",
+        "value2": "value2",
+        "sumOfValue":function(value,sourceobject){
+            return {
+                value: sourceobject.value1 + sourceobject.value2
+            }
+        }
+}
+var map=mapper.create(themap);
+var res=map.map({
+    value1:2,
+    value2:3
+});
+console.dir(res,true);
+//Outputs
+//{ value1: 2, value2: 3, sumOfValue: 5 }
+//
+```
+The function always has two arguments, val and sourceobject, where val is sourceobject[val], and sourceobject is the full object passed to the map function.
+The return value should be an object with a value property, you can also return a name property that will lead to a renaming of the return property.
+
+---
+
+# The End!!
+
+
