@@ -52,10 +52,12 @@
 
 ## Configuration.
 There is a _lot_ of configuration, the most important files are
+@ul
     - .env 
     - config/config.[environment].js
     - partnerfiles
     - mapfiles 
+@ulend
 
 ---
 
@@ -71,7 +73,8 @@ JIRA_PASS=secret
 NODE_ENV decides what config files to read. 
  - test->config.test.js
  - preprod->config.preprod.js
- .........
+
+---
 
 ### config.[environment].js
 This is the main configuration file. 
@@ -130,4 +133,28 @@ This is the main configuration file.
         //Common maps can be placed here
     }
 };
+```
+
+---
+
+## Maps
+Maps are meant to be configurable way to transform an object, either on the way out from Jira or in from the vendor. The goal was to make the map/template as readable as possible. 
+
+#### Simple example
+
+```js 
+const themap = {
+        "val1": "value1",
+        "val2": "value2"
+}
+const map=mapper.create(themap);
+const result=map.map({
+    value1:2,
+    value2:3
+});
+console.dir(res,true);
+//Outputs
+//{ val1: 2, val2: 3 }
+//
+
 ```
