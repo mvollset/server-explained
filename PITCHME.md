@@ -49,7 +49,14 @@
 @snapend
 
 ---
-## Configuration of the server.
+## Configuration.
+There is a _lot_ of configuration, the most important files are
+    - .env 
+    - config/config.<environment>.js
+    - partnerfiles
+    - mapfiles 
+
+---
 
 ### .env file
 This file contains username and password for jira, and environment setting.
