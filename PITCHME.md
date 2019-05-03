@@ -1,5 +1,12 @@
-# Jira Integration Server
+---?color=linear-gradient(100deg, #cf022b 50%, white 50%)
 
+@snap[west span-40 text-center]
+### Jira Integration Server
+@snapend
+
+@snap[east span-40 text-center]
+![](assets/img/integration.png)
+@snapend
 
 ---
 
@@ -8,7 +15,7 @@
  NAV switched from BMC Remedy to Jira Servicedesk ALL integrations needed to be rewritten
  - Both on their side 
  - And for the suppliers/vendors/customers 
-![](assets/img/integration.png)
+
 
 ---
 
