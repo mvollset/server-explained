@@ -2,7 +2,7 @@
 title : "Simple(?) integration engine for Jira"
 # Look-and-Feel
 logo : assets/img/logo.PNG
-theme : sky
+theme : white
 theme-override : assets/css/PITCHME.css
 
 # Behavior
