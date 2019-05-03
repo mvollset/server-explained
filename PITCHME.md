@@ -20,5 +20,5 @@
 
 @snap[east span-40 text-center]
 ### After
-![](assets/img/after_integratons.png)
+![](assets/img/after_integratons.PNG)
 @snapend
