@@ -49,10 +49,11 @@
 @snapend
 
 ---
+
 ## Configuration.
 There is a _lot_ of configuration, the most important files are
     - .env 
-    - config/config.<environment>.js
+    - config/config.[environment].js
     - partnerfiles
     - mapfiles 
 
@@ -72,3 +73,61 @@ NODE_ENV decides what config files to read.
  - preprod->config.preprod.js
  .........
 
+### config.[environment].js
+This is the main configuration file. 
+```js
+ server: {
+        port: process.env.PORT || 3000
+    },
+    jiraAuth: {
+        user: process.env.JIRA_USERNAME,
+        password: process.env.JIRA_PASS
+    },
+    //How long to cache insight objects
+    cache: {
+        stdTTL: 1000,
+        checkPeriod: 1200
+    },
+    loadPlugins:[
+        //Aray of plugins/routes to enable for this server
+        {
+            path:'./nav',
+            root:'skatt'
+        },
+        {
+            path:'./partner',
+            root:'api/siam/partner'
+        }
+    ],
+    //icapServer:'155.55.65.11', If needed the integration server can call an icap server to do virus control on incoming files.
+    
+    insight: {
+        //Insight configuration  
+       
+    },
+    jiraRoot: 'https://ref-jira.sits.no',
+    jiraKeySuffix: 'ref-jira.sits.no',
+    mapFolder: 'config/map-preprod', //Folder to read maps from
+    partnerFolder: 'config/partner-preprod', //Folder to read partners from
+    jiraEditMetaUrl: '/rest/api/2/issue/createmeta?expand=projects.issuetypes.fields',
+    fields: {
+        //Well known fields 
+        externalRef: 'customfield_16661',
+        partner: 'customfield_16660',//Skatt
+        externalId: 'customfield_16662',
+        closedPartnerDate:'customfield_16665',
+        receivedPartnerDate:'customfield_16663'
+
+    },
+    transitions: {
+        //The id of transitions that are performed by the integration server
+        receivedPartner: "161",
+        backoutPartner: "151",
+        finishedPartner: "171"
+    }
+    ,
+    maps: {
+        //Common maps can be placed here
+    }
+};
+```
