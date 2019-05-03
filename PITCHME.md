@@ -15,10 +15,10 @@
 @snap[west span-40 text-center]
 
 ### Before
-![/assets/img/before_integratons.png]
+![](/assets/img/before_integratons.png)
 @snapend
 
 @snap[east span-40 text-center]
 ### After
-![/assets/img/after_integratons.png]
+![](/assets/img/after_integratons.png)
 @snapend
