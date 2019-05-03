@@ -14,7 +14,7 @@
 
 ## Background
 
- When XXX switched from [Put in SD vendor here] to [Put in SD vendor here] every integration needed to be rewritten
+ When XXX switched from [SD vendor] to [SD vendor] every integration needed to be rewritten
  - Both on their side 
  - And for the suppliers/vendors/customers 
 
@@ -47,4 +47,21 @@
 ### After
 ![](assets/img/after_integratons.PNG)
 @snapend
+
+---
+## Configuration of the server.
+
+### .env file
+This file contains username and password for jira, and environment setting.
+```
+PORT=8080 #Port the server will listen on
+NODE_ENV=test #Environment
+JIRA_USERNAME=srvjira
+JIRA_PASS=secret
+
+```
+NODE_ENV decides what config files to read. 
+ - test->config.test.js
+ - preprod->config.preprod.js
+ .........
 
