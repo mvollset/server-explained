@@ -138,7 +138,9 @@ This is the main configuration file.
 ---
 
 ## Maps
-Maps are meant to be configurable way to transform an object, either on the way out from Jira or in from the vendor. The goal was to make the map/template as readable as possible. 
+Maps are meant to be configurable way to transform an object, either on the way out from Jira or in from the vendor.
+
+---
 
 #### Simple example
 
@@ -156,5 +158,47 @@ console.dir(res,true);
 //Outputs
 //{ val1: 2, val2: 3 }
 //
+
+```
+#### Fixed values
+This is your typical jira map.
+```js
+const map = {
+    fields: {
+        project: {
+            key: {
+                value: "ITSD",
+                $fixed: true
+            }
+        },
+        summary: "summary",
+        description: "description",
+        issuetype: {
+            name: {
+                value: "Service Request",
+                //bytt til id 13101 hvis dette ikke funker (kanskje ikke riktig ID i Q og P)
+                $fixed: true
+            }
+        }
+    }
+}
+const result = map.map({
+    summary:"My Summary",
+    description:"My Description"
+});
+result ={
+    fields: {
+        project: {
+            key: "ITSD
+        },
+        summary: "My Summary",
+        description: "My Description",
+        issuetype: {
+            name: {
+                value: "Service Request",
+            }
+        }
+    }
+}
 
 ```
