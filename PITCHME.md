@@ -29,8 +29,10 @@
 
 @snap[east span-40 text-center]
  
- - Integrations were directly coupled to the named servicedesk
- - Developed over the years by whoever was responsible/available at the time
+ @ul
+ - Directly coupled
+ - Differnet technologies
+@ulend
 
 @snapend
 ---
