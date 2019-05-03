@@ -1,8 +1,8 @@
-# Let's get Started
+# Jira Integration Server
 
 
 ---
 
-## Add Some slimey Candy
+## Background
 
 ![](assets/img/integration.png)

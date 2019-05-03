@@ -1,0 +1,27 @@
+@font-face {
+    font-family: MySopraFontRegular;
+    src: url(soprasteria.woff) format('woff');
+    font-style: normal;
+    font-weight: 400
+}
+
+@font-face {
+    font-family: MySopraFontBold;
+    src: url(soprasteria.woff) format('woff');
+    font-style: normal;
+    font-weight: 700
+}
+
+@font-face {
+    font-family: MySopraFontRegularItalic;
+    src: url(soprasteria.woff) format('woff');
+    font-style: italic;
+    font-weight: 400
+}
+
+@font-face {
+    font-family: MySopraFontBoldItalic;
+    src: url(soprasteria.woff) format('woff');
+    font-style: italic;
+    font-weight: 700
+}

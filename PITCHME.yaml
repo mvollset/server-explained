@@ -1,0 +1,16 @@
+# Layout
+layout : center-right
+title : "Simple(?) integration engine for Jira"
+# Look-and-Feel
+logo : assets/img/logo.png
+theme : night
+theme-override : assets/css/PITCHME.css
+highlight : ir-black
+
+# Behavior
+transition : none
+published : true
+
+# Plugins
+charts : true
+mathjax : TeX-AMS_HTML-full
