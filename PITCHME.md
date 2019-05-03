@@ -1,6 +1,6 @@
 ---?color=linear-gradient(100deg, #cf022b 50%, white 50%)
 
-@snap[west span-40 text-center]
+@snap[west span-60 text-left]
 ### Jira Integration Server
 * Siam for Jira Servicedesk *
 

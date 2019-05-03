@@ -1,11 +1,12 @@
 # Layout
+layout: top-left
 title : "Simple(?) integration engine for Jira"
 # Look-and-Feel
 logo : assets/img/logo.png
 theme-override : assets/css/PITCHME.css
 
 # Behavior
-transition : none
+transition : slide
 published : true
 
 # Plugins
