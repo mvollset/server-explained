@@ -138,7 +138,7 @@ This is the main configuration file.
 ---
 
 ## Maps
-Maps are meant to be configurable way to transform an object, either on the way out from Jira or in from the vendor.
+Maps are meant to be a configurable way to transform an object, either on the way out from Jira or in from the vendor.
 
 ---
 
@@ -191,7 +191,7 @@ const result = map.map({
 result ={
     fields: {
         project: {
-            key: "ITSD
+            key: "ITSD"
         },
         summary: "My Summary",
         description: "My Description",
@@ -218,7 +218,7 @@ const map = {"foo.bar":"field1"}
  const map = {value:"object1.property"} //Will also work.
  ```
 
- ---
+---
 
  #### Mapping with functions
  Sometimes you can not simply map one value to another, so the object mapper allows you to use define functions
