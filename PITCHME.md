@@ -31,7 +31,7 @@
  
  @ul
  - Directly coupled
- - Differnet technologies
+ - Different technologies
 @ulend
 
 @snapend
@@ -102,12 +102,6 @@ This is the main configuration file.
             root:'api/siam/partner'
         }
     ],
-    //icapServer:'155.55.65.11', If needed the integration server can call an icap server to do virus control on incoming files.
-    
-    insight: {
-        //Insight configuration  
-       
-    },
     jiraRoot: 'https://ref-jira.sits.no',
     jiraKeySuffix: 'ref-jira.sits.no',
     mapFolder: 'config/map-preprod', //Folder to read maps from
@@ -127,6 +121,12 @@ This is the main configuration file.
         receivedPartner: "161",
         backoutPartner: "151",
         finishedPartner: "171"
+    },
+    //icapServer:'155.55.65.11', If needed the integration server can call an icap server to do virus control on incoming files.
+    
+    insight: {
+        //Insight configuration  
+       
     }
     ,
     maps: {
@@ -138,7 +138,7 @@ This is the main configuration file.
 ---
 
 ## Maps
-Maps are meant to be a configurable way to transform an object, either on the way out from Jira or in from the vendor.
+Maps are ,meant to be, a configurable way to transform an object, either on the way out from Jira or in from the vendor.
 
 ---
 
@@ -160,6 +160,7 @@ console.dir(res,true);
 //
 
 ```
+
 ---
 
 #### Fixed values
@@ -178,7 +179,6 @@ const map = {
         issuetype: {
             name: {
                 value: "Service Request",
-                //bytt til id 13101 hvis dette ikke funker (kanskje ikke riktig ID i Q og P)
                 $fixed: true
             }
         }
@@ -213,7 +213,7 @@ result ={
 const map = {"foo.bar":"field1"} 
 /*Will translate into 
  foo:{
-     bar:"field1
+     bar:"field1"
  }*/
  const map = {value:"object1.property"} //Will also work.
  ```
@@ -223,7 +223,7 @@ const map = {"foo.bar":"field1"}
  #### Mapping with functions
  Sometimes you can not simply map one value to another, so the object mapper allows you to use define functions
 
- ```js
+ ```
 var themap = {
         "value1": "value1",
         "value2": "value2",
