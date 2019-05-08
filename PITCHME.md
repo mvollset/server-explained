@@ -272,10 +272,7 @@ A partner/ vendor is configured in a .js file in the directory config.partner fo
 
 ---
 
-## Partner requests configuratfields: {
-        project: {
-            key: {
-              ion
+## Partner requests configuratfields
 
 A partner must have a transfer request and a addComment request. In addition you may add a addAtttachment request, if the attachments are sent as separate calls to the vendor.
 
