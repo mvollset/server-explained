@@ -248,6 +248,71 @@ The return value should be an object with a value property, you can also return 
 
 ---
 
+# Partner configuration
+A partner/ vendor is configured in a .js file in the directory config.partner folder. For a partner to work you have to define the following properties.
+@ul
+    - User information
+    - Name
+    - requests
+    - maps
+@ulend
+
+---
+
+# Partner user information
+
+```js
+    user: {
+       id: "976239997", //For Skatteetaten this is the partners org.no
+       partner: "atea",
+       name: "Atea", //This MUST match the the value in the partner dropdown.
+       scope:["jira-comment"] //Now there are two scopes available, jira-comment and jira-create
+   }
+```
+
+---
+
+# Partner requests configuration
+
+A partner must have a transfer request and a addComment request. In addition you may add a addAtttachment request, if the attachments are sent as separate calls to the vendor.
+
+> The request object is an extension to the [node request package](https://www.npmjs.com/package/request), so most of the options available here should work.
+
+---
+
+# Atea transfer explained
+
+```js
+
+          method: 'POST', //HTTP Method
+           uri: `https://servicehub.atea.com/partner/servicedesk/NO/customer/1207521/incident`, //URL 
+           bodyMap: "ateaCreate", // Map  for translation of 
+           json: true, //Use JSON
+           headers: { "Ocp-Apim-Subscription-Key": "c4423dc2ab7e4772ad22f0ddbe85c4cf" }, //Any additional http headers
+           rejectUnauthorized: false, //Check https certificate.
+           //Transform function should always return an object with success true or false, and a requestId and or request number
+           transform: function (body, response /*, resolveWithFullResponse*/) {
+               if (response.statusCode == 202)
+                   return {
+                       requestId: body,
+                       requestNumber:body,
+                       success: true,
+                       message: 'Atea accepted the call'
+                   };
+           },
+           //Should we handle attachments? If attachments is not defined  attachments will not be transferred. If mode is split - we will send the attachments as seperate calls after the case is transferred.
+           attachments:{
+               mode:"split",
+               transform: async function(attachmentInfo,user,pass){
+                   return attachmentInfo;
+               }
+           }
+       }
+```
+
+---
+
+
 # The End!!
 
 
