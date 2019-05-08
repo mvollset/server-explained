@@ -248,7 +248,7 @@ The return value should be an object with a value property, you can also return 
 
 ---
 
-# Partner configuration
+## Partner configuration
 A partner/ vendor is configured in a .js file in the directory config.partner folder. For a partner to work you have to define the following properties.
 @ul
     - User information
@@ -259,7 +259,7 @@ A partner/ vendor is configured in a .js file in the directory config.partner fo
 
 ---
 
-# Partner user information
+## Partner user information
 
 ```js
     user: {
@@ -272,15 +272,20 @@ A partner/ vendor is configured in a .js file in the directory config.partner fo
 
 ---
 
-# Partner requests configuration
+## Partner requests configuratfields: {
+        project: {
+            key: {
+              ion
 
 A partner must have a transfer request and a addComment request. In addition you may add a addAtttachment request, if the attachments are sent as separate calls to the vendor.
 
 > The request object is an extension to the [node request package](https://www.npmjs.com/package/request), so most of the options available here should work.
 
+
 ---
 
-# Atea transfer explained
+
+## Atea transfer explained
 
 ```js
 
