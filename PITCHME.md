@@ -272,7 +272,7 @@ A partner/ vendor is configured in a .js file in the directory config.partner fo
 
 ---
 
-## Partner requests configuratfields
+## Partner requests configuration
 
 A partner must have a transfer request and a addComment request. In addition you may add a addAtttachment request, if the attachments are sent as separate calls to the vendor.
 
@@ -285,13 +285,12 @@ A partner must have a transfer request and a addComment request. In addition you
 ## Atea transfer explained
 
 ```js
-
           method: 'POST', //HTTP Method
            uri: `https://servicehub.atea.com/partner/servicedesk/NO/customer/1207521/incident`, //URL 
            bodyMap: "ateaCreate", // Map  for translation of 
            json: true, //Use JSON
-           headers: { "Ocp-Apim-Subscription-Key": "c4423dc2ab7e4772ad22f0ddbe85c4cf" }, //Any additional http headers
-           rejectUnauthorized: false, //Check https certificate.
+           headers: { "key": "asdasds" }, //Any additional http headers
+           rejectUnauthorized: false, //Check https certificate, should be true if you are not going through a proxy.
            //Transform function should always return an object with success true or false, and a requestId and or request number
            transform: function (body, response /*, resolveWithFullResponse*/) {
                if (response.statusCode == 202)
